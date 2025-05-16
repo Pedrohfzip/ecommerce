@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import sequelize from "./config/db.js";
+import routes from "./config/routes.js"; // Importa as rotas
 dotenv.config();
 
 const app = express();
@@ -12,12 +13,14 @@ app.use(express.json());
 app.use(cors());
 
 //Routes
+app.use("/", routes); 
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 //Error
 
-app.get("/", (req, res) => {
-  // ...existing code...
-});
 
 //Server
 sequelize.authenticate()
