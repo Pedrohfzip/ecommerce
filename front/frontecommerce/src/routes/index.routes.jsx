@@ -1,14 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "../components/Home";
-
+import Login from "../components/Login";
 const AppRoutes = () => {
   return (
-    <Router>
-      <Routes>
+    <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-    </Router>
+        <Route path="/login" element={<Login />} />
+    </Routes>
   );
 };
 
