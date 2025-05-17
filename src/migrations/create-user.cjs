@@ -19,6 +19,11 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      userType: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "user", // Valores possíveis: 'user', 'admin'
+      },
       password: {
         type: DataTypes.STRING,
         allowNull: false,
